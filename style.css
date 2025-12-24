@@ -420,7 +420,7 @@ align-items: center;justify-content: center;}
   padding: 30px;
   justify-content: space-around;
   width: 100%;
-  height: 58vh;
+  height: 75vh;
 }
 
 h4 {
@@ -475,11 +475,11 @@ h6 {
 
 .part7 {
   margin: 0;
-  padding: 33px;
+  padding: 70px;
   background-color: #181818;
   color: white;
   width: 100%;
-  height: 20vh;
+  height: 30vh;
   font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: space-around;
@@ -498,6 +498,8 @@ h6 {
 
 .part8 {
   padding: 50px;
+  width: 100%;
+  height: 30vh;
   background-color: #181818;
   color: rgba(255, 255, 255, 0.705);
   display: flex;
@@ -513,20 +515,181 @@ h6 {
 
 .part9 {
   padding: 50px;
+  width: 100%;
+  height: 20vh;
   background-color: #303030;
   color: white;
   display: flex;
   flex-direction: column;
   gap:20px;
-  font-weight: 400;
-  font-size: 14px;
-
 }
+
+.part9-s1 h6, .part9-s2 h6 {
+font-weight: 500;
+font-size: 11px;
+letter-spacing: 2px;
+}
+
 
 
 .part9-s1, .part9-s2 {
   display: flex;
   gap: 30px;
+  
+}
+
+
+
+
+
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+@media screen and (max-width: 700px) {
+    /* Hide the standard horizontal navigation */
+    nav {
+        display: none;
+    }
+
+    /* Adjust the navbar layout to center the logo when nav is hidden */
+    .navbar {
+        justify-content: center;
+        padding: 20px;
+    }
+
+    .logo img {
+        height: 60px; /* Adjust logo size for mobile */
+    }
+}
+
+/* Hide checkbox */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 992px) {
+    .hamburger {
+        display: flex; /* Show on mobile */
+    }
+
+    /* Show nav only when checkbox is checked */
+    .menu-checkbox:checked ~ nav {
+        display: block;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 20px;
+    }
+
+    .menu-checkbox:checked ~ nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+
+
+
+    /* Part 2: News Slider */
+    .slider-content {
+        grid-template-columns: 1fr; /* Stack text and image */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .text-content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .read-more {
+        justify-content: center;
+    }
+
+    .image-content {
+        order: -1; /* Move image above text on mobile */
+    }
+
+    /* Parts 3, 4, and 5: Split Sections */
+    .part3, .part4, .part5 {
+        flex-direction: column;
+        height: auto; /* Allow height to grow with content */
+    }
+
+    .part3s1, .part3s2, 
+    .part4s1, .part4s2, 
+    .part5s1, .part5s2 {
+        width: 100%;
+        height: 60vh; /* Fixed height for mobile sections */
+    }
+
+    /* Footer / Part 6: Links Grid */
+    .part6 {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .p6-s1, .p6-s2, .p6-s3, .p6-s4, .p6-s5 {
+        gap: 15px;
+    }
+
+    /* Part 7: Social Media */
+    .part7 {
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+
+    .s-text {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .part9-s1, .part9-s2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .part8 {
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Prevent hover scaling from breaking mobile layout */
+    .part3s1:hover, .part3s2:hover, .part4s1:hover, 
+    .part4s2:hover, .part5s1:hover, .part5s2:hover {
+        transform: none;
+    }
 }
 
 
