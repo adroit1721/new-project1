@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+body {
+    background-color: rgba(0, 0, 0, 0.103);
+}
+
+ .discover-btn {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: #ffffff; /* Initial text color */
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: transparent; /* Transparent background */
+  transition: all 0.3s ease;
+}
+
+/* The Text and Underline Effect */
+.discover-btn .text {
+  position: relative;
+  margin-right: 15px;
+}
+
+.discover-btn .text::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: brown; /* Change this to your hover color */
+  transition: width 0.3s ease;
+}
+
+/* The Circle and Arrow */
+.discover-btn .circle {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.discover-btn .arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover States */
+.discover-btn:hover .text::after {
+  width: 100%; /* Animates underline from left to right */
+}
+
+.discover-btn:hover .circle {
+  border-color: brown; /* Circle color changes on hover */
+}
+
+    </style>
+</head>
+<body>
+    <a href="#" class="discover-btn">
+  <span class="text">DISCOVER</span>
+  <div class="circle">
+    <span class="arrow">&gt;</span>
+  </div>
+</a>
+</body>
+</html>
